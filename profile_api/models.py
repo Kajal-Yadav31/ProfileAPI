@@ -4,7 +4,7 @@ from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.models import BaseUserManager
 
 # Create your models here.
-class UserProfileManager():
+class UserProfileManager(BaseUserManager):
     def create_user(self, email, name, password=None):
         if not email:
             raise ValueError('User must have an email address')
